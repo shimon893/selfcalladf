@@ -13,7 +13,19 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://management.azure.com/subscriptions/8b82c9cd-6ece-41e3-8ec8-9129a1918404/resourceGroups/8b82c9cd-6ece-41e3-8ec8-9129a1918404/providers/Microsoft.DataFactory/factories/SelfCallADF/queryPipelineRuns?api-version=2018-06-01",
+					"method": "POST",
+					"body": {
+						"lastUpdatedBefore": "@{utcnow()}",
+						"lastUpdatedAfter": "@{addhours(utcnow(),-36)}"
+					},
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://management.azure.com/"
+					}
+				}
 			}
 		],
 		"annotations": []
