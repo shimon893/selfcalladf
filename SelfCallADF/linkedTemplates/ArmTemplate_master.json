@@ -7,6 +7,12 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "SelfCallADF"
 		},
+		"Run Each Minute_properties_Check Dependencies_parameters_CheckPipelines": {
+			"type": "array",
+			"defaultValue": [
+				"Dummy Wait"
+			]
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -33,6 +39,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"Run Each Minute_properties_Check Dependencies_parameters_CheckPipelines": {
+						"value": "[parameters('Run Each Minute_properties_Check Dependencies_parameters_CheckPipelines')]"
 					}
 				}
 			},

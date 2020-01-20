@@ -4,6 +4,11 @@
 	"parameters": {
 		"factoryName": {
 			"value": "SelfCallADF"
+		},
+		"Run Each Minute_properties_Check Dependencies_parameters_CheckPipelines": {
+			"value": [
+				"Dummy Wait"
+			]
 		}
 	}
 }
