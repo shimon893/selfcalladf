@@ -40,10 +40,32 @@
 								"lastUpdatedBefore": "@{utcnow()}",
 								"lastUpdatedAfter": "@{addhours(utcnow(),-36)}"
 							},
+							"linkedServices": [],
+							"datasets": [],
 							"authentication": {
 								"type": "MSI",
 								"resource": "https://management.azure.com/"
 							}
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DummyWait')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Wait_a_while",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 360
 						}
 					}
 				],
