@@ -51,7 +51,7 @@
 					},
 					"ifFalseActivities": [
 						{
-							"name": "Activity executed",
+							"name": "Activity not executed due to dependency",
 							"type": "Wait",
 							"dependsOn": [],
 							"userProperties": [],
@@ -62,7 +62,7 @@
 					],
 					"ifTrueActivities": [
 						{
-							"name": "Activity not executed due to dependency",
+							"name": "Activity executed",
 							"type": "Wait",
 							"dependsOn": [],
 							"userProperties": [],
