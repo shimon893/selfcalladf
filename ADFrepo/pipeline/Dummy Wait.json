@@ -1,9 +1,9 @@
 {
-	"name": "DummyWait",
+	"name": "Dummy Wait",
 	"properties": {
 		"activities": [
 			{
-				"name": "Wait_a_while",
+				"name": "Wait a while",
 				"type": "Wait",
 				"dependsOn": [],
 				"userProperties": [],

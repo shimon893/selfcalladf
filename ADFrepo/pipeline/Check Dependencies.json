@@ -1,5 +1,5 @@
 {
-	"name": "CheckDependencies",
+	"name": "Check Dependencies",
 	"properties": {
 		"activities": [
 			{
@@ -22,13 +22,55 @@
 						"Content-Type": "application/json"
 					},
 					"body": {
-						"lastUpdatedBefore": "@{utcnow()}",
-						"lastUpdatedAfter": "@{addhours(utcnow(),-36)}"
+						"value": "{\"lastUpdatedBefore\":\"@{utcnow()}\"\n,\"lastUpdatedAfter\":\"@{addhours(utcnow(),-36)}\",\n\"filters\": [\n    {\n      \"operand\": \"PipelineName\",\n      \"operator\": \"In\",\n      \"values\": \n\t\t@{pipeline().parameters.CheckPipelines}\n    },\n    {\n      \"operand\": \"Status\",\n      \"operator\": \"Equals\",\n      \"values\": [\n        \"InProgress\"\n      ]\n    }\n    \n    \n  ]\n}",
+						"type": "Expression"
 					},
 					"authentication": {
 						"type": "MSI",
 						"resource": "https://management.azure.com/"
 					}
+				}
+			},
+			{
+				"name": "To Run or not to Run",
+				"description": "That is a question",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Check dependencies",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(length(activity('Check dependencies').output.value),0)",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Activity executed",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 1
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "Activity not executed due to dependency",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 1
+							}
+						}
+					]
 				}
 			}
 		],
