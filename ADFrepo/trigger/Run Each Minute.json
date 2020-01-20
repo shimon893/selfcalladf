@@ -8,6 +8,11 @@
 				"pipelineReference": {
 					"referenceName": "Check Dependencies",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"CheckPipelines": [
+						"Dummy Wait"
+					]
 				}
 			}
 		],
