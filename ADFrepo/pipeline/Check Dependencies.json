@@ -78,7 +78,7 @@
 			"CheckPipelines": {
 				"type": "string",
 				"defaultValue": [
-					"DummyWait"
+					"Dummy Wait"
 				]
 			}
 		},
