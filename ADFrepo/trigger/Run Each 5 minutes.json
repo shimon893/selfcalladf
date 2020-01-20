@@ -1,0 +1,25 @@
+{
+	"name": "Run Each 5 minutes",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "DummyWait",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 5,
+				"startTime": "2020-01-20T22:04:00.000Z",
+				"endTime": "2020-01-21T22:04:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
