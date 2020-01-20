@@ -1,0 +1,17 @@
+{
+	"name": "DummyWait",
+	"properties": {
+		"activities": [
+			{
+				"name": "Wait_a_while",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 360
+				}
+			}
+		],
+		"annotations": []
+	}
+}
