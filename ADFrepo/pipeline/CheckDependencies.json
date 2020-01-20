@@ -1,0 +1,14 @@
+{
+	"name": "CheckDependencies",
+	"properties": {
+		"parameters": {
+			"CheckPipelines": {
+				"type": "string",
+				"defaultValue": [
+					"DummyWait"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
