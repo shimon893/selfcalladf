@@ -173,8 +173,7 @@
 						"pipelineReference": {
 							"referenceName": "Dummy Wait",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
