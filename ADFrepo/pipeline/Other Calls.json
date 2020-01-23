@@ -1,0 +1,36 @@
+{
+	"name": "Other Calls",
+	"properties": {
+		"activities": [
+			{
+				"name": "IR checks",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://management.azure.com/subscriptions/8b82c9cd-6ece-41e3-8ec8-9129a1918404/resourceGroups/AzureRonin/providers/Microsoft.DataFactory/factories/SelfCallADF/integrationRuntimes/exampleIntegrationRuntime/getConnectionInfo?api-version=2018-06-01",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"lastUpdatedBefore": "@{utcnow()}",
+						"lastUpdatedAfter": "@{addhours(utcnow(),-36)}"
+					},
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://management.azure.com/"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
