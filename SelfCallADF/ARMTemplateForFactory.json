@@ -228,7 +228,6 @@
 						"frequency": "Minute",
 						"interval": 5,
 						"startTime": "2020-01-20T22:04:00Z",
-						"endTime": "2020-01-21T22:04:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -261,7 +260,6 @@
 						"frequency": "Minute",
 						"interval": 1,
 						"startTime": "2020-01-20T22:21:00Z",
-						"endTime": "2020-01-21T22:21:00Z",
 						"timeZone": "UTC"
 					}
 				}
